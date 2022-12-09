@@ -1,0 +1,99 @@
+
+
+<div class="container col-md-6 mt-0">
+  <div class="card">
+    <div class="card-header">
+      <h3 appHighight class="text-center">Sign In</h3>
+    </div>
+      <div class="card-body">
+
+        <!-- <div class="card"> -->
+
+
+        <div class="card-body">
+          <form [formGroup]="saveForm" (ngSubmit)="save()">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Company Name</span>
+              </div>
+              <input type="text" name="cname" formControlName="cname" class="form-control" placeholder="">
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Address</span>
+              </div> <textarea class="form-control" name="adrs" id="add" rows="3"></textarea>
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Website</span>
+              </div>
+              <input type="text" name="web" formControlName="web" class="form-control" placeholder="">
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">PID</span>
+              </div>
+              <input type="text" name="pid" formControlName="pid"  readonly class="form-control" placeholder="You can't edit this...">
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Features</span>
+              </div>
+
+              <select class="select"  multiple >
+                <option value="1">Feature1</option>
+                <option value="2">Feature2</option>
+                <option value="3">Feature3
+                <option>
+                <option value="4">Feature4</option>
+                <option value="5">Feature5</option>
+                <option value="6">Feature6</option>
+                <option value="7">Feature7</option>
+                <option value="8">Feature8</option>
+              </select>
+              <div>
+
+                <button (click)="add">Add more</button> 
+                            </div>
+  
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Sub Features</span>
+              </div>
+              <select class="select" multiple>
+                <option value="1">Feature1</option>
+                <option value="2">Feature2</option>
+                <option value="3">Feature3
+                <option>
+                <option value="4">Feature4</option>
+                <option value="5">Feature5</option>
+                <option value="6">Feature6</option>
+                <option value="7">Feature7</option>
+                <option value="8">Feature8</option>
+              </select>
+                          <div>
+
+              <button (click)="add">Add more</button> 
+                          </div>
+            </div>
+            
+
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Additional Input</span>
+              </div>
+              <input type="text" name="addinput" formControlName="addinput" class="form-control" placeholder="">
+              <div>
+
+                <button (click)="add">Add more</button> 
+                            </div>
+              
+            </div>
+            <input type="submit" value="Save" class="btn float-right login_btn " style="width:50%">
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

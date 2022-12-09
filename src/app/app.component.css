@@ -1,0 +1,28 @@
+ .style1{
+    opacity: 0;
+}
+.card{
+    height:auto;;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 600px;
+    background-color:black !important;
+    }
+
+    .container{
+        height: 100%;
+        align-content: center;
+        /* margin-left: 10px; */
+        }
+        .btn{
+            color: black;
+            background-color: #FFC312;
+            width: 100px;
+            margin-left: 700px;
+            float: left;
+    
+            }
+
+            select.select { width: 250px; }
+
+        
