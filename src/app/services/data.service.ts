@@ -12,18 +12,8 @@ export class DataService {
   constructor(private http: HttpClient) {
     
   }
-  //save data in to a local storage
-  // saveDetails() {
-  //   localStorage.setItem("database", JSON.stringify(this.database))
-  //   if (this.currentAcno) {
-  //     localStorage.setItem("currentAcno", JSON.stringify(this.currentAcno))
-  //   }
-  //   if (this.currentUser) {
-  //     localStorage.setItem("currentUser", JSON.stringify(this.currentUser))
-  //   }
-  // }
 
-  save(cname:any,adrs: any,web: any,addinput:any,pid:any,features:any,subfeatures:any) {
+  save(cname:any,adrs: any,web: any,addinput:any,pid:any,features:any,subfeatures:any,morefeat:any,moresubfeat:any,moreinput:any) {
 
     const data = {
       cname,
@@ -31,9 +21,12 @@ export class DataService {
       web,
       addinput,
       pid,features,
-      subfeatures
+      subfeatures,
+      morefeat,
+      moresubfeat,
+      moreinput
     }
-    //register API
+    
     return this.http.post('http://localhost:3000/save', data)
   }
 }
