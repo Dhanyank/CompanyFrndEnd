@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-const options = {
-  headers: new HttpHeaders()
-}
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,8 @@ export class DataService {
       adrs,
       web,
       addinput,
-      pid,features,
+      pid,
+      features,
       subfeatures,
       morefeat,
       moresubfeat,
@@ -28,5 +28,6 @@ export class DataService {
     }
     
     return this.http.post('http://localhost:3000/save', data)
+    
   }
 }
