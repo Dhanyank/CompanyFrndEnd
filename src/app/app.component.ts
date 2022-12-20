@@ -87,7 +87,6 @@ count=1;
 
 console.log(this.count++)
 this.count++;
-alert("successfully added")
 console.log(cname);
 console.log(pid);
 
