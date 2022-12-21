@@ -23,7 +23,8 @@
     
             }
 
-            select.select { width: 250px; }
+            select.select { width: 380px;
+            height: 50px; }
 
         
 

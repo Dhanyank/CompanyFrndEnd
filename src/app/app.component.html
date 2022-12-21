@@ -19,29 +19,28 @@
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Address</span>
+            </div>
+            <input type="text" name="adrs" formControlName="adrs" class="form-control" placeholder="">
+          </div>
 
-              <input type="text" name="adrs" formControlName="adrs" class="form-control" placeholder="">
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Website</span>
             </div>
-               <!-- <textarea class="form-control" name="adrs" id="add" rows="3"></textarea> -->
+            <input type="text" name="web" formControlName="web" class="form-control" placeholder="">
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">PID</span>
             </div>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Website</span>
-              </div>
-              <input type="text" name="web" formControlName="web" class="form-control" placeholder="">
+            <input type="text" name="pid" formControlName="pid" class="form-control" readonly placeholder="Auto fill">
+          </div>
+          <div class="input-group form-group" formArrayName="features">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Features</span>
             </div>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">PID</span>
-              </div>
-              <input type="text" name="pid" formControlName="pid" class="form-control" [placeholder]="count">
-            </div>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Features</span>
-              </div>
-
-              <select class="select"  (change)="featureChange($event)">
+            <div *ngFor="let contact of saveForm.get('features')['controls']; let i=index;">
+              <select class="select" [formControlName]="i">
                 <option value="Feature1">Feature1</option>
                 <option value="Feature2">Feature2</option>
                 <option value="Feature1">Feature3</option>
@@ -51,67 +50,58 @@
                 <option value="Feature7">Feature7</option>
                 <option value="Feature8">Feature8</option>
               </select>
-              <div>
-                <button (click)="add1()">Add more Features</button>
+            </div>
 
-                <div class="input-group-prepend" *ngIf="div1">
-                  <input type="text" name="morefeat" formControlName="morefeat" value="" class="form-control"
-                    placeholder="">
-                  <button (click)="vanish1()">-</button>
-
-                </div>
-              </div>
+            <div>
+              <button (click)="addFeatures()">Add more Features</button>
 
             </div>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Sub Features</span>
-              </div>
-              <select class="select"   (change)="subfeatureChange($event)" >
+
+          </div>
+          <div class="input-group form-group" formArrayName="subfeatures">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Sub Features</span>
+            </div>
+            <div *ngFor="let subfeat of saveForm.get('subfeatures')['controls']; let i=index;">
+              <select class="select" [formControlName]="i">
                 <option value="Feature1">Feature1</option>
                 <option value="Feature2">Feature2</option>
-                <option value="Feature3">Feature3</option>
-              
+                <option value="Feature1">Feature3</option>
                 <option value="Feature4">Feature4</option>
                 <option value="Feature5">Feature5</option>
                 <option value="Feature6">Feature6</option>
                 <option value="Feature7">Feature7</option>
                 <option value="Feature8">Feature8</option>
               </select>
-
-              <div>
-                <button (click)="add2()">Add more Sub Features</button>
-
-                <div class="input-group-prepend" *ngIf="div2">
-                  <input type="text" name="moresubfeat" formControlName="moresubfeat"  class="form-control"
-                    placeholder="">
-                  <button (click)="vanish2()">-</button>
-
-                </div>
-              </div>
-
             </div>
 
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Additional Input</span>
-              </div>
-              <input type="text" name="addinput" formControlName="addinput" class="form-control" placeholder="">
-            </div>
             <div>
-              <button (click)="add3()">Add more Input</button>
-
-              <div class="input-group-prepend" *ngIf="div3">
-                <input type="text" name="moreinput" formControlName="moreinput" class="form-control" 
-                  style="width: 50%;" placeholder="">
-                <button (click)="vanish3()">-</button>
-
-              </div>
+              <button (click)="addSubFeatures()">Add more Sub Features</button>
             </div>
 
-            <div class="input-group form-group">
+          </div>
+          <div class="input-group form-group" formArrayName="addinput">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Additional Input</span>
             </div>
-            <input type="submit" value="Save" class="btn float-right login_btn " style="width:50%">
+            <div *ngFor="let addinput of saveForm.get('addinput')['controls']; let i=index;">
+
+
+              <input type="text" [formControlName]="i">
+
+            </div>
+
+          </div>
+            <div>
+              <button (click)="addMoreInput()">Add more Input</button>
+            </div>
+          
+          
+
+
+          <div class="input-group form-group">
+          </div>
+          <input type="submit" value="Save" class="btn float-right login_btn " style="width:50%">
 
         </form>
       </div>

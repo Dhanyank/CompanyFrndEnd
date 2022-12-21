@@ -12,7 +12,7 @@ export class DataService {
     
   }
 
-  save(cname:any,adrs: any,web: any,addinput:any,pid:any,features:any,subfeatures:any,morefeat:any,moresubfeat:any,moreinput:any) {
+  save(cname:any,adrs: any,web: any,addinput:any,pid:any,features:any,subfeatures:any) {
 
     const data = {
       cname,
@@ -21,11 +21,8 @@ export class DataService {
       addinput,
       pid,
       features,
-      subfeatures,
-      morefeat,
-      moresubfeat,
-      moreinput
-    }
+      subfeatures
+         }
     
     return this.http.post('http://localhost:3000/save', data)
     
