@@ -12,19 +12,19 @@ export class DataService {
     
   }
 
-  save(cname:any,adrs: any,web: any,addinput:any,pid:any,features:any,subfeatures:any) {
+  save(obj:any) {
 
-    const data = {
-      cname,
-      adrs,
-      web,
-      addinput,
-      pid,
-      features,
-      subfeatures
-         }
+    // const data = {
+    //   cname,
+    //   adrs,
+    //   web,
+    //   addinput,
+    //   pid,
+    //   features,
+    //   subfeatures
+    //      }
     
-    return this.http.post('http://localhost:3000/save', data)
+    return this.http.post('http://localhost:3000/save', obj)
     
   }
 }

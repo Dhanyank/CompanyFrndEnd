@@ -13,7 +13,7 @@ export class AppComponent {
 
   public saveForm: any;
   constructor(private ds: DataService, private fb: FormBuilder) { }
-  
+
 
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class AppComponent {
       addinput: new FormArray([new FormControl()]),
 
 
-         })
+    })
 
   }
   addFeatures() {
@@ -39,25 +39,27 @@ export class AppComponent {
   addSubFeatures() {
     (this.saveForm.get('subfeatures') as FormArray).push(new FormControl());
   }
-  addMoreInput()
-  {
+  addMoreInput() {
     (this.saveForm.get('addinput') as FormArray).push(new FormControl());
 
   }
-  count=0;
+  count = 0;
   save() {
-    var pid = this.count++;
-    var features= this.saveForm.controls["features"] as FormArray;
-    var subfeatures= this.saveForm.controls["subfeatures"] as FormArray;
+    //     var pid = this.saveForm.value.pid
+    //     var features= this.saveForm.controls["features"] as FormArray;
+    //     var subfeatures= this.saveForm.controls["subfeatures"] as FormArray;
 
-    var cname = this.saveForm.value.cname
-    var adrs = this.saveForm.value.adrs
-    var web = this.saveForm.value.web
-    var addinput = this.saveForm.controls["addinput"] as FormArray;
+    //     var cname = this.saveForm.value.cname
+    //     var adrs = this.saveForm.value.adrs
+    //     var web = this.saveForm.value.web
+    //     var addinput = this.saveForm.controls["addinput"] as FormArray;
+    // console.log(this.saveForm.value);
+
+
 
     if (this.saveForm.valid) {
       //check validation
-      const result = this.ds.save(cname, adrs, web, addinput, pid, features, subfeatures)
+  this.ds.save(this.saveForm.value)
         .subscribe((result: any) => {
           if (result) {
             alert(result.message)
@@ -65,12 +67,12 @@ export class AppComponent {
           }
 
         },
-          (result) => {
-            alert(result.error.message)
+          (error: any) => {
+            console.log(error);
 
           })
-    }
 
+        }
     // console.log(cname);
     // console.log(adrs);
     // console.log(web);
@@ -88,5 +90,5 @@ export class AppComponent {
 
 
   }
-  
-}
+
+  }
