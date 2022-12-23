@@ -1,6 +1,6 @@
 import { style } from '@angular/animations';
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { IDropdownSettings, } from 'ng-multiselect-dropdown';
 import { DataService } from './services/data.service';
 
@@ -13,7 +13,6 @@ export class AppComponent {
 
   public saveForm: any;
   constructor(private ds: DataService, private fb: FormBuilder) { }
-
 
 
   ngOnInit(): void {
@@ -43,23 +42,15 @@ export class AppComponent {
     (this.saveForm.get('addinput') as FormArray).push(new FormControl());
 
   }
-  count = 0;
+
   save() {
-    //     var pid = this.saveForm.value.pid
-    //     var features= this.saveForm.controls["features"] as FormArray;
-    //     var subfeatures= this.saveForm.controls["subfeatures"] as FormArray;
-
-    //     var cname = this.saveForm.value.cname
-    //     var adrs = this.saveForm.value.adrs
-    //     var web = this.saveForm.value.web
-    //     var addinput = this.saveForm.controls["addinput"] as FormArray;
-    // console.log(this.saveForm.value);
-
+    
+    console.log(this.saveForm.value);
 
 
     if (this.saveForm.valid) {
       //check validation
-  this.ds.save(this.saveForm.value)
+      this.ds.save(this.saveForm.value)
         .subscribe((result: any) => {
           if (result) {
             alert(result.message)
@@ -70,25 +61,16 @@ export class AppComponent {
           (error: any) => {
             console.log(error);
 
-          })
-
+          }
+        )
         }
-    // console.log(cname);
-    // console.log(adrs);
-    // console.log(web);
-
-    // console.log(pid);
-    // console.log(features);
-
-    // console.log(subfeatures);
-    // console.log(addinput);
-
-
-
-
-
-
-
   }
+}
 
-  }
+
+
+
+
+
+
+

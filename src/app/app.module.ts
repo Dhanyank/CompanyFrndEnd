@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 // import { MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns;
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown'
@@ -20,6 +20,7 @@ import{HttpClientModule} from '@angular/common/http'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
 
     // // MultiSelectAllModule,
 
