@@ -33,60 +33,62 @@
             <div class="input-group-prepend">
               <span class="input-group-text">PID</span>
             </div>
-            <input type="text" name="pid" formControlName="pid" class="form-control"  placeholder="">
+            <input type="text" name="pid" formControlName="pid" class="form-control" placeholder="">
           </div>
-          <div class="input-group form-group" formArrayName="features">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Features</span>
-            </div>
-            <div *ngFor="let contact of saveForm.get('features')['controls']; let i=index;">
-              <select class="select" [formControlName]="i">
-                <option value="Feature1">Feature1</option>
-                <option value="Feature2">Feature2</option>
-                <option value="Feature1">Feature3</option>
-                <option value="Feature4">Feature4</option>
-                <option value="Feature5">Feature5</option>
-                <option value="Feature6">Feature6</option>
-                <option value="Feature7">Feature7</option>
-                <option value="Feature8">Feature8</option>
-              </select>
-            </div>
 
-            <div>
-              <!-- <button (click)="addFeatures()">Add more Features</button> -->
-              <input type="button" value="addMoreInput" (click)="addFeatures()">
 
-            </div>
 
+
+          <!-- <div> -->
+          <!-- <select (change)="onSelect($event)"> -->
+          <div class="input-group-prepend">
+            <span class="input-group-text">Features & Subfeatures</span>
           </div>
-          <div class="input-group form-group" formArrayName="subfeatures">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Sub Features</span>
+          <div class="card-container">
+            <div formArrayName="features">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Features</span>
+              </div>
+
+
+              <div *ngFor="let features of saveForm.get('features')['controls']; let i=index;">
+                <select class="select" (change)="onSelect($event)" [formControlName]="i">
+                  <option>Select Feature</option>
+                  <option *ngFor="let features of feature" value="{{features.id}}">{{features.name}}</option>
+                </select>
+              </div>
             </div>
-            <div *ngFor="let subfeat of saveForm.get('subfeatures')['controls']; let i=index;">
-              <select class="select" [formControlName]="i">
-                <option value="Feature1">Feature1</option>
-                <option value="Feature2">Feature2</option>
-                <option value="Feature1">Feature3</option>
-                <option value="Feature4">Feature4</option>
-                <option value="Feature5">Feature5</option>
-                <option value="Feature6">Feature6</option>
-                <option value="Feature7">Feature7</option>
-                <option value="Feature8">Feature8</option>
-              </select>
+            <div class="input-group form-group">
             </div>
 
-            <div>
-              <input type="button" value="addMoreInput" (click)="addSubFeatures()">
+            <!-- <select> -->
+            <div formArrayName="subfeatures">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Sub Features</span>
+              </div>
+              <div *ngFor="let subfeat of saveForm.get('subfeatures')['controls']; let i=index;">
+                <select class="select" [formControlName]="i">
 
-              <!-- <button (click)="addSubFeatures()">Add more Sub Features</button> -->
+                  <option>Select Sub Feature</option>
+                  <option *ngFor="let subfeatures of subfeature" value="{{subfeatures.name}}">{{subfeatures.name}}
+                  </option>
+                </select>
+              </div>
             </div>
 
-          </div>
-          <div class="input-group form-group" formArrayName="addinput">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Additional Input</span>
+
+            <div class="input-group form-group">
             </div>
+
+            <div class="input-group form-group" formArrayName="addinput">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Additional Input</span>
+              </div>
+              <div class="input-group form-group">
+
+              </div>
+    
+            <span></span>
             <div *ngFor="let addinput of saveForm.get('addinput')['controls']; let i=index;">
 
 
@@ -94,13 +96,28 @@
 
             </div>
 
-          </div>
-            <div>
-              <input type="button" value="addMoreInput" (click)="addMoreInput()">
-              <!-- <button (click)="addMoreInput()">Add more Input</button> -->
             </div>
-          
-          
+
+
+          <span></span>
+          <div class="input-group form-group">
+          </div>
+
+          <input type="button" value="Add more Features" (click)="addFeatures()">
+
+          </div>
+
+
+          <div class="input-group form-group">
+          </div>
+
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Special Input</span>
+            </div>
+            <input type="text" name="splinput" formControlName="splinput" class="form-control" placeholder="">
+          </div>
 
 
           <div class="input-group form-group">
@@ -111,4 +128,3 @@
       </div>
     </div>
   </div>
-</div>
