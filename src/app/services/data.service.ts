@@ -15,20 +15,23 @@ export class DataService {
   feature(){
     return[
       {
-        id:1,
+        id:"Feature 1",
         name:"Feature 1"
       },
       {
-        id:2,
+        id:"Feature 2",
+
         name:"Feature 2"
       },
       {
-        id:3,
+        id:"Feature 3",
+
         name:"Feature 3"
       }
       ,
        {
-        id:4,
+        id:"Feature 4",
+
         name:"Feature 4"
       }
 
@@ -39,51 +42,62 @@ export class DataService {
   {
     return[
       {
-        id:1,
+        id:"Feature 1",
         name:"Feature 1.1"
       },
       {
-        id:1,
+        id:"Feature 1",
+
         name:"Feature 1.2"
       },
       {
-        id:1,
+        id:"Feature 1",
+
         name:"Feature 1.3"
       },
       {
-        id:2,
+        id:"Feature 2",
+
         name:"Feature 2.1"
       },
       {
-        id:2,
+        id:"Feature 2",
+
         name:"Feature 2.2"
       },
       {
-        id:2,
+        id:"Feature 2",
+
         name:"Feature 2.3"
       },
       {
-        id:3,
+        id:"Feature 3",
+
         name:"Feature 3.1"
       },
       {
-        id:3,
+        id:"Feature 3",
+
         name:"Feature 3.2"
       },
       {
-        id:3,
+        id:"Feature 3",
+
         name:"Feature 3.3"
       },
       {
-        id:4,
+        id:"Feature 4",
+
         name:"Feature 4.1"
       },
       {
-        id:4,
+        id:"Feature 4",
+
         name:"Feature 4.2"
       },
       {
-        id:4,
+        id:"Feature 4",
+
         name:"Feature 4.3"
       }
     ]

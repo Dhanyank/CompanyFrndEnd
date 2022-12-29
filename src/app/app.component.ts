@@ -52,6 +52,7 @@ this.subfeature=this.ds.subfeature().filter(e=>e.id == feature.target.value)
 
   }
   addFeatures() {
+  
     (this.saveForm.get('features') as FormArray).push(new FormControl());
     (this.saveForm.get('addinput') as FormArray).push(new FormControl());
     (this.saveForm.get('subfeatures') as FormArray).push(new FormControl());

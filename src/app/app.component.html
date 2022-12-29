@@ -54,6 +54,8 @@
               <div *ngFor="let features of saveForm.get('features')['controls']; let i=index;">
                 <select class="select" (change)="onSelect($event)" [formControlName]="i">
                   <option>Select Feature</option>
+                  <!-- <option *ngFor="let features of feature" [ngValue]="{id: features.Id, name: features.Name}">{{features.name}}</option> -->
+
                   <option *ngFor="let features of feature" value="{{features.id}}">{{features.name}}</option>
                 </select>
               </div>
